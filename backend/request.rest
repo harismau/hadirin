@@ -1,0 +1,104 @@
+GET http://localhost:3306/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImZpcnN0X25hbWUiOiJIYXJpcyIsImxhc3RfbmFtZSI6Ik1hdWxhbmEgUmFtYWRoYW4iLCJlbWFpbCI6ImhhcmlzQGdtYWlsLmNvbSIsImJpcnRoX2RhdGUiOiIyMDAxLTExLTIxIiwiZ2VuZGVyIjoibGFraS1sYWtpIiwicm9sZSI6InNpc3dhIiwiaWF0IjoxNjU3MTgwMDk1LCJleHAiOjE2NTcxODAxMTV9.bCRcsF6pvEYBUxdb-WgqIhl57ovep5SFHgUrgf2JbxU
+
+###
+GET http://localhost:3306/token
+
+###
+DELETE http://localhost:3306/logout
+
+###
+POST http://localhost:3306/users
+Content-Type: application/json
+
+{
+    "name": "Haris",
+    "email": "haris@gmail.com",
+    "password": "harganteng",
+    "confPassword": "harganteng"
+}
+
+###
+POST http://localhost:3306/login
+Content-Type: application/json
+
+{
+    "email": "haris@gmail.com",
+    "password": "haris123"
+}
+
+###
+GET http://localhost:3306/classes
+Content-Type: application/json
+
+{
+    "user_id": "3"
+}
+
+###
+POST http://localhost:3306/session
+Content-Type: application/json
+
+{
+    "class_id": "1",
+    "session_code": "X87AB5"
+}
+
+###
+GET http://localhost:3306/session
+Content-Type: application/json
+
+{
+    "session_code": "X87AB5"
+}
+
+###
+POST http://localhost:3306/presence
+Content-Type: application/json
+
+{
+    "user_id": "1",
+    "session_code": "X87AB5"
+}
+
+###
+GET http://localhost:3306/presence
+Content-Type: application/json
+
+{
+    "user_id": "1",
+}
+
+###
+PUT http://localhost:3306/presenceupdatereason
+Content-Type: application/json
+
+{
+    "user_id": "1",
+    "session_code": "X87AB5",
+    "reason": "izin"
+}
+###
+PUT http://localhost:3306/presenceupdateimg
+Content-Type: application/json
+
+{
+    "user_id": "1",
+    "img_presence": "izin"
+}
+
+###
+GET http://localhost:3306/session
+Content-Type: application/json
+
+{
+    "session_code": "X87AB5"
+}
+
+###
+POST http://localhost:3306/cookiesession
+Content-Type: application/json
+
+{
+    "session_code": "X87AB5"
+}
